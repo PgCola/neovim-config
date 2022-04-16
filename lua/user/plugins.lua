@@ -1,8 +1,7 @@
 local fn = vim.fn
 
 -- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
+local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim" if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOTSTRAP = fn.system {
     "git",
     "clone",
@@ -84,18 +83,22 @@ return packer.startup(function(use)
   requires = "kyazdani42/nvim-web-devicons",
   config = function()
     require("trouble").setup {
+      auto_preview = false,
       -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
       }
     end
   }
---      -- Treesitter
---      use {
---        "nvim-treesitter/nvim-treesitter",
---        run = ":TSUpdate",
---      }
---      use "JoosepAlviste/nvim-ts-context-commentstring"
+   -- Git
+  use "lewis6991/gitsigns.nvim"
+  --
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

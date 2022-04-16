@@ -23,3 +23,4 @@ end
 
 vim.o.background = "dark"
 vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[hi Pmenu guibg=#282828]])
