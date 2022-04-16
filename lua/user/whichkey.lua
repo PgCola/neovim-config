@@ -156,7 +156,6 @@ local mappings = {
   f = {
     name = "Find/Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
@@ -177,6 +176,12 @@ local mappings = {
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },
+  x = {
+    name = "Trouble",
+    x = {"<cmd>TroubleToggle<cr>", "Toggle Trouble"},
+    w = {"<cmd>TroubleToggle workspace_diagnostics<cr>", "Toggle Workspace Diagnostics"},
+    d = {"<cmd>TroubleToggle document_diagnostics<cr>", "Toggle Document Diagnostics"}
+  }
 }
 
 which_key.setup(setup)
