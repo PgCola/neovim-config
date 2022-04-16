@@ -44,6 +44,15 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "ellisonleao/gruvbox.nvim"
   use "akinsho/toggleterm.nvim"
+  use "windwp/nvim-autopairs"
+
+
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+}
 
 
   -- Telescope
