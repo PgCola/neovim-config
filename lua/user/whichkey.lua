@@ -3,17 +3,6 @@ if not status_ok then
   return
 end
 
-local Terminal  = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({
-                          cmd = "lazygit",
-                          hidden = true,
-                          direction = "float"
-})
-
-function _LAZYGIT_TOGGLE()
-  lazygit:toggle()
-end
-
 local setup = {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
@@ -96,7 +85,6 @@ local mappings = {
     "Buffers",
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  ["w"] = { "<cmd>w!<CR>", "Save" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
@@ -180,8 +168,6 @@ local mappings = {
   t = {
     name = "Terminal",
     n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-    u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-    t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
     p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
@@ -192,6 +178,11 @@ local mappings = {
     x = {"<cmd>TroubleToggle<cr>", "Toggle Trouble"},
     w = {"<cmd>TroubleToggle workspace_diagnostics<cr>", "Toggle Workspace Diagnostics"},
     d = {"<cmd>TroubleToggle document_diagnostics<cr>", "Toggle Document Diagnostics"}
+  },
+  w = {
+    name = "Window",
+    v = {"<cmd>vsplit<cr>", "Create new window vertical"},
+    s = {"<cmd>split<cr>", "Create new window vertical"},
   }
 }
 
