@@ -9,5 +9,5 @@ require "user.treesitter"
 require "user.gitsigns"
 require "user.comment"
 require "user.autopairs"
-
+require "user.cmp"
 --require "user.telescope"

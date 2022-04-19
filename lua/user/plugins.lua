@@ -97,6 +97,9 @@ return packer.startup(function(use)
     requires = 'nvim-lua/plenary.nvim'
   }
 
+  -- JDTLS
+  use 'mfussenegger/nvim-jdtls'
+
 
   use {
   "folke/trouble.nvim",
