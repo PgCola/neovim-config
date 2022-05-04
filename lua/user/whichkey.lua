@@ -183,6 +183,15 @@ local mappings = {
     name = "Window",
     v = {"<cmd>vsplit<cr>", "Create new window vertical"},
     s = {"<cmd>split<cr>", "Create new window vertical"},
+  },
+  d = {
+    name = "Debugger",
+    d = {"<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI"},
+    b = {"<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle breakpoint"},
+    c = {"<cmd>lua require'dap'.continue()<cr>", "Continue"},
+    n = {"<cmd>lua require'dap'.step_over()<cr>", "Step over"},
+    o = {"<cmd>lua require'dap'.step_into()<cr>", "Step into"},
+    r = {"<cmd>lua require'dap'.repl.open()<cr>", "REPL"},
   }
 }
 
